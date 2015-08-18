@@ -13,37 +13,38 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control", placeholder: "ex. spot" %>
   </div>
   <div class="field">
     <%= f.label :owner_id %><br>
-    <%= f.text_field :owner_id %>
+    <%= f.collection_select :owner_id, Owner.all, :id, :lastfirst, {prompt: "Select an owner"}, {class: "form-control"} %>
   </div>
   <div class="field">
     <%= f.label :breed_id %><br>
-    <%= f.text_field :breed_id %>
+    <%= f.collection_select :breed_id, Breed.all, :id, :breed, {prompt: "Select a breed"}, {class: "form-control"} %>
   </div>
   <div class="field">
-    <%= f.label :dob %><br>
+    <%# TODO: CHANGE TO A DATEPICKER ONCE WE LEARN THAT LATER %>
+    <%= f.label "Date of Birth" %><br>
     <%= f.date_select :dob %>
   </div>
   <div class="field">
     <%= f.label :allergies %><br>
-    <%= f.text_field :allergies %>
+    <%= f.text_field :allergies, class: "form-control", placeholder: "chocolate" %>
   </div>
   <div class="field">
     <%= f.label :vet_name %><br>
-    <%= f.text_field :vet_name %>
+    <%= f.text_field :vet_name, class: "form-control", placeholder: "Dr. Doolittle" %>
   </div>
   <div class="field">
     <%= f.label :vet_phone %><br>
-    <%= f.text_field :vet_phone %>
+    <%= f.text_field :vet_phone, class: "form-control", placeholder: "555-555-5555" %>
   </div>
   <div class="field">
     <%= f.label :in_daycare %><br>
     <%= f.check_box :in_daycare %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-default" %>
   </div>
 <% end %>
