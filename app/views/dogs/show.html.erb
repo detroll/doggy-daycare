@@ -41,5 +41,11 @@
   <%= @dog.in_daycare %>
 </p>
 
+<!-- <p>
+ <%#= image_tag @cat.avatar.url %>
+ <%#= image_tag @cat.avatar.url(:medium) %>
+ <%#= image_tag @cat.avatar.url(:thumb) %>
+</p> -->
+
 <%= link_to 'Edit', edit_dog_path(@dog), class: "btn btn-primary" %> 
 <%= link_to 'Back', dogs_path, class: "btn btn-default" %>
