@@ -8,7 +8,7 @@
          <h3 class="panel-title"><%= dog.name %> <%= dog.try(:owner).try(:last_name) %></h3>
        </div>
        <div class="panel-body">
-         <%# image_tag cat.avatar.url(:medium), class: "img-responsive" %>
+         <% image_tag dog.avatar.url(:medium), class: "img-responsive" %>
          <%= dog.allergies %>
          <%= dog.in_daycare %>
          <%= link_to fa_icon("eye", text: 'Show'), dog, class: "btn btn-primary btn-xs" %>
