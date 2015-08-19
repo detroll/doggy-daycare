@@ -38,6 +38,10 @@ gem 'font-awesome-rails'
 gem 'annotate'
 gem 'starter_generators'
 gem 'stamp'    #for dates
+gem 'placegant'
+gem 'kaminari'
+gem 'will_paginate', '~> 3.0.6'
+gem "paperclip", "~> 4.3"
 
 group :development do
   gem 'quiet_assets'
