@@ -3,19 +3,19 @@
 <div class="row">
   <%  @dogs.each do |dog| %>
     <div class="col-md-4">
-     <div class="panel panel-default <%= 'panel-success' if dog.in_daycare %>">
-       <div class="panel-heading">
-         <h3 class="panel-title"><%= dog.name %> <%= dog.try(:owner).try(:last_name) %></h3>
-       </div>
        <div class="panel panel-default <%= 'panel-success' if dog.in_daycare %>">
-       <div class="panel-body">
-         <% image_tag dog.avatar.url(:medium), class: "img-responsive" %>
-         <%= dog.allergies %>
-         <%= dog.in_daycare %>
-         <%= link_to fa_icon("eye", text: 'Show'), dog, class: "btn btn-primary btn-xs" %>
-         <%= link_to fa_icon("pencil", text: 'Edit'), edit_dog_path(dog), class: "btn btn-warning btn-xs" %>
-         <%= link_to fa_icon("trash-o", text: 'Delete'), dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
-       </div>
+         <div class="panel-heading">
+           <h3 class="panel-title"><%= dog.name %> <%= dog.try(:owner).try(:last_name) %></h3>
+         </div>
+         <div class="panel-body">
+           <%= image_tag dog.avatar.url(:medium), class: "img-responsive" %>
+           <%= dog.allergies %>
+           <%= dog.in_daycare %>
+           <%= link_to fa_icon("eye", text: 'Show'), dog, class: "btn btn-primary btn-xs" %>
+           <%= link_to fa_icon("pencil", text: 'Edit'), edit_dog_path(dog), class: "btn btn-warning btn-xs" %>
+           <%= link_to fa_icon("trash-o", text: 'Delete'), dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+         </div>
+       
      </div>
    </div>
  <% end %>
