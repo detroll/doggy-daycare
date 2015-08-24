@@ -27,16 +27,15 @@
       <% end %>
 
       <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-          <li><%= link_to('Edit registration', edit_user_registration_path) %>
-          </li>
-          <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-          </li>
-        <% else %>
-        <li><%= link_to('Sign Up', new_user_registration_path) %></li>
-        <li><%= link_to('Login', new_user_session_path) %></li>
-        <% end %>
-      </ul>
+       <% if user_signed_in? %>
+         <li class="welcome">Welcome <%= current_user.email %></li>
+         <li><%= link_to fa_icon('cog', text: "Account"), edit_user_registration_path %></li>
+         <li><%= link_to fa_icon('sign-out', text: 'Logout'), destroy_user_session_path, :method => :delete %></li>
+       <% else %>
+         <li><%= link_to fa_icon('check-circle-o', text: 'Sign Up'), new_user_registration_path %></li>
+         <li><%= link_to fa_icon('sign-in', text: "Login"), new_user_session_path %></li>
+       <% end %>
+     </ul>
 
     </div><!-- /.navbar-collapse -->
 </nav>
